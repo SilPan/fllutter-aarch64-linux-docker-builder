@@ -9,6 +9,8 @@ jobs:
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     - name: install docker
       run: brew install docker
+    - name: open docker for the first time
+      run: open /Applications/Docker.app
     - name: build
       run: docker build -t ${{ github.repository }}:${{ github.sha }} .
     - name: Login to GitHub Container Registry
