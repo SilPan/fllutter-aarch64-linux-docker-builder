@@ -4,7 +4,7 @@ jobs:
   build:
     runs-on: macos-12
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: build
       run: docker build -t ${{ github.repository }}:${{ github.sha }} .
     - name: Login to GitHub Container Registry
