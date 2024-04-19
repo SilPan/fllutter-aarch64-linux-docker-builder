@@ -9,8 +9,12 @@ jobs:
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     - name: install docker
       run: brew install docker
+    - name: install tree
+      run: brew install tree
     - name: find docker daemon
-      run: find / -name dockerd -mount 2> /dev/null
+      run: |
+        ls -alsh /usr/local/Cellar/docker/26.0.2
+        tree /usr/local/Cellar/docker
     - name : start docker daemon
       run: dockerd
     - name: build
